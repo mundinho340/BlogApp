@@ -9,6 +9,10 @@
         app.use(bodyParser.json())
     //Handlebars
         app.engine('handlebars', handlebars({defaultLayout: 'main'}))
+        app.set('view engine', 'handlebars')
+    //Configuracao do mongoose
+//Rotas
+
 //Outros
 
 const port = 8080
