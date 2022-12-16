@@ -9,8 +9,12 @@
         app.use(bodyParser.urlencoded({extended: true}))
         app.use(bodyParser.json())
     //Handlebars
-        app.engine('handlebars', handlebars({defaultLayout: 'main'}))
-        app.set('view engine', 'handlebars')
+    const ehbs = handlebars.create({
+        defaultLayout:'handlebars'
+    })
+    
+    app.engine('handlesbar', handlebars.engine)
+    app.set('view egine', handlebars)
     //Configuracao do mongoose
 //Rotas
     app.use('/admin', admin)
