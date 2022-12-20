@@ -16,6 +16,9 @@
     app.engine('handlesbar', handlebars.engine)
     app.set('view egine', handlebars)
     //Configuracao do mongoose
+
+    //Public 
+        app.use(express.static(path.join(__dirname, "public")))
 //Rotas
     app.use('/admin', admin)
 //Outros
