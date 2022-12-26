@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const Categoria = new Schema({
     nome:{
         type: String ,
-        requeired: true
+        requeired: true,
+        default: "user anonimo"
     },
     slug:{
         type:String ,
@@ -15,3 +16,5 @@ const Categoria = new Schema({
         default: Date.now()
     }
 })
+
+mongoose.model('categorias', Categoria )
