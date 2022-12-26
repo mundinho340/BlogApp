@@ -6,6 +6,7 @@
     const handlebars = require('express-handlebars')
     const admin = require('./routers/admin')
     const path = require("path")
+    const mongoose = require('mongoose')
 
     //organize
     
@@ -32,7 +33,12 @@ var handle = exphbs.create({
     app.engine('handlesbar', handlebars.engine)
     app.set('view egine', handlebars)
     //Configuracao do mongoose
-
+        mongoose.Promise = global.Promise
+        mongoose.connect("mongodb://localhost/blogapp").then(() =>{
+            console.log("connectado ao mongo")
+        }).catch((err)=>{
+            console.log("Ërro ao connectar: "+err)
+        })
     //Public 
         app.use(express.static(path.join(__dirname, "public")))
 //Rotas
