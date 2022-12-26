@@ -1,7 +1,7 @@
  const router = require('express').Router()
 
 router.get('/', (req, res)=>{
-    res.render("admin/index")
+    res.render("./admin/index.handlebars")
 })
 
 router.get('/posts', (req, res)=>{
