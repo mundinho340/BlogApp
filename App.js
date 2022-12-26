@@ -33,11 +33,14 @@ var handle = exphbs.create({
     app.engine('handlesbar', handlebars.engine)
     app.set('view egine', handlebars)
     //Configuracao do mongoose
-        mongoose.Promise = global.Promise
-        mongoose.connect("mongodb://localhost/blogapp").then(() =>{
-            console.log("connectado ao mongo")
+        mongoose.set('strictQuery', true);
+
+        mongoose.connect("mongodb://127.0.0.1:27017/bancoTeste").then(()=>{
+        console.log("Banco conectado com sucesso!!!")
         }).catch((err)=>{
-            console.log("Ërro ao connectar: "+err)
+        
+            console.log("Houve um erro ao se conectar ao banco:" +err)
+        
         })
     //Public 
         app.use(express.static(path.join(__dirname, "public")))
