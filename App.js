@@ -26,6 +26,7 @@ var handle = exphbs.create({
         app.use(bodyParser.urlencoded({extended: true}))
         //app.use(express.urlencoded({ extended: true}))  
         app.use(bodyParser.json())
+
     //Handlebars
     const ehbs = handlebars.create({
         defaultLayout:'handlebars'
@@ -44,6 +45,10 @@ var handle = exphbs.create({
         
         })
     //Public 
+        app.use((req, res , next)=> {
+            console.log("Oi eu sou o midlleware")
+            next()
+        })
         app.use(express.static(path.join(__dirname, "public")))
 //Rotas
     app.use('/admin', admin)
