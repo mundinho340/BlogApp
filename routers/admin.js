@@ -1,4 +1,7 @@
  const router = require('express').Router()
+ const mongoose = require("mongoose")
+ require("../modules/Categorias")
+ const Categorias = mongoose.model("categorias")
 
 router.get('/', (req, res)=>{
     res.render("./admin/index.handlebars")
