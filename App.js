@@ -24,6 +24,7 @@ var handle = exphbs.create({
 //Configurações
     //Body Parser
         app.use(bodyParser.urlencoded({extended: true}))
+        //app.use(express.urlencoded({ extended: true}))  
         app.use(bodyParser.json())
     //Handlebars
     const ehbs = handlebars.create({
