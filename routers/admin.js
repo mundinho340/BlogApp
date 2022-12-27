@@ -24,6 +24,12 @@ router.post("/categorias/nova",(req, res) => {
         nome: req.body.nome,
         slug: req.body.slug
     }
+
+    new Categorias(novaCategoria).save().then(()=>{
+        console.log("Categoria salva com sucess!")
+    }).catch((e)=>{
+        console.log("ocorreu um erro ao salvar a categoria por "+e)
+    })
 })
 
  module.exports = router
