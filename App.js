@@ -35,7 +35,7 @@ var handle = exphbs.create({
     //Configuracao do mongoose
         mongoose.set('strictQuery', true);
 
-        mongoose.connect("mongodb://127.0.0.1:27017/bancoTeste").then(()=>{
+        mongoose.connect("mongodb://127.0.0.1:27017/blogapp").then(()=>{
         console.log("Banco conectado com sucesso!!!")
         }).catch((err)=>{
         

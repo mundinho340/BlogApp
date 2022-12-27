@@ -1,7 +1,7 @@
  const router = require('express').Router()
  const mongoose = require("mongoose")
  require("../modules/Categorias")
- const Categorias = mongoose.model("categorias")
+ const Categoria= mongoose.model("categorias")
 
 router.get('/', (req, res)=>{
     res.render("./admin/index.handlebars")
@@ -25,10 +25,10 @@ router.post("/categorias/nova",(req, res) => {
         slug: req.body.slug
     }
 
-    new Categorias(novaCategoria).save().then(()=>{
+    new Categoria(novaCategoria).save().then(()=>{
         console.log("Categoria salva com sucess!")
     }).catch((e)=>{
-        console.log("ocorreu um erro ao salvar a categoria por "+e)
+        console.log("ocorreu   um erro ao salvar a categoria por "+e)
     })
 })
 
