@@ -19,4 +19,11 @@ router.get("/categorias/add",(req, res)=>{
     res.render("./admin/addcategorias")
 })
 
+router.post("/categorias/nova",(req, res) => {
+    const novaCategoria ={
+        nome: req.body.nome,
+        slug: req.body.slug
+    }
+})
+
  module.exports = router
