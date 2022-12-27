@@ -1,6 +1,6 @@
  const router = require('express').Router()
  const mongoose = require("mongoose")
- require("../modules/Categorias")
+ require("../modules/Categoria")
  const Categoria= mongoose.model("categorias")
 
 router.get('/', (req, res)=>{
