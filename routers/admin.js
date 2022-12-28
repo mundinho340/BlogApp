@@ -20,6 +20,13 @@ router.get("/categorias/add",(req, res)=>{
 })
 
 router.post("/categorias/nova",(req, res) => {
+    var erros=[]
+
+    if(!req.body.nome || typeof req.body.nome== undefined ||  req.body.nome== null){
+        erros.push({texto: "Nome invalido"})
+    }
+
+
     const novaCategoria ={
         nome: req.body.nome,
         slug: req.body.slug
