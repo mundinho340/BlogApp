@@ -7,6 +7,8 @@
     const admin = require('./routers/admin')
     const path = require("path")
     const mongoose = require('mongoose')
+    const session = require('express-session')
+    const flash = require('connect-flash')
 
     //organize
     
@@ -22,6 +24,13 @@ var handle = exphbs.create({
 
         app.set('view engine', 'handlebars')
 //Configurações
+    //Sessão
+    app.use(session({
+        secret: "cursodenode",
+        resave: true,
+        saveUninitialized:true
+    }))
+
     //Body Parser
         app.use(bodyParser.urlencoded({extended: true}))
         //app.use(express.urlencoded({ extended: true}))  
