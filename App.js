@@ -30,6 +30,11 @@ var handle = exphbs.create({
         resave: true,
         saveUninitialized:true
     }))
+    app.use(flash())
+    //middleware
+        app.use((req, res, next)=>{
+            res.locals,success_msg= req.flash("success_msg")
+        })
 
     //Body Parser
         app.use(bodyParser.urlencoded({extended: true}))
