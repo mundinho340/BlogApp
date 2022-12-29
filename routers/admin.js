@@ -27,7 +27,7 @@ router.post("/categorias/nova",(req, res) => {
     }
 
     if(!req.body.slug || typeof req.body.slug == undefined|| req.body.nome == null){
-        erros.push({text: "Slug invalido"})
+        erros.push({texto: "Slug invalido"})
     }
 
     if(req.body.nome.length < 2){
@@ -36,18 +36,19 @@ router.post("/categorias/nova",(req, res) => {
 
     if(erros.length>0 ){
         res.render("admin/addcategorias.handlebars", {erros: erros})
+    }else{       
+        const novaCategoria ={
+            nome: req.body.nome,
+            slug: req.body.slug
+        }
+
+        new Categoria(novaCategoria).save().then(()=>{
+            res.redirect('/admin/categorias')
+        }).catch((e)=>{
+            console.log("ocorreu   um erro ao salvar a categoria por "+e)
+        })
     }
 
-    const novaCategoria ={
-        nome: req.body.nome,
-        slug: req.body.slug
-    }
-
-    new Categoria(novaCategoria).save().then(()=>{
-        console.log("Categoria salva com sucess!")
-    }).catch((e)=>{
-        console.log("ocorreu   um erro ao salvar a categoria por "+e)
-    })
 })
 
  module.exports = router
