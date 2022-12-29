@@ -35,7 +35,7 @@ router.post("/categorias/nova",(req, res) => {
     }
 
     if(erros.length>0 ){
-        res.render("addcategorias", {erros: erros})
+        res.render("admin/addcategorias.handlebars", {erros: erros})
     }
 
     const novaCategoria ={
