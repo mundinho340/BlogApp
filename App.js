@@ -50,6 +50,14 @@ var handle = exphbs.create({
     
     app.engine('handlesbar', handlebars.engine)
     app.set('view egine', handlebars)
+    app.engine('handlebars', handlebars({
+        defaultLayout: 'main',
+        runtimeOptions: {
+            allowProtoPropertiesByDefault: true,
+            allowProtoMethodsByDefault: true,
+        },
+    }));
+
     //Configuracao do mongoose
         mongoose.set('strictQuery', true);
 
