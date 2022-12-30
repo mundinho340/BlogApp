@@ -19,7 +19,6 @@ router.get('/categorias',(req, res)=>{
         req.flash("error_msg", "Houve um erro ao listar as categorias")
         res.redirect("/admin")
     })
-    res.render("./admin/categorias.handlebars")
 })
 
 router.get("/categorias/add",(req, res)=>{
