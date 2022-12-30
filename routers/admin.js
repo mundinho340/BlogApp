@@ -12,7 +12,7 @@ router.get('/posts', (req, res)=>{
 })
 
 router.get('/categorias',(req, res)=>{
-    Categoria.fing().then((categorias)=>{
+    Categoria.find().then((categorias)=>{
         res.render("admin/categorias", {categorias: categorias})
 
     }).catch((error)=>{
