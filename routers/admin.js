@@ -74,8 +74,8 @@ router.post("/categorias/edit", (req, res)=>{
         categoria.slug= req.body.slug
         
         categoria.save().then(()=>{
-            req.flash("error_msg", "Categoria editada com sucesso!")
-            req.redirect("/admin/categorias")
+            req.flash("success_msg", "Categoria editada com sucesso!")
+            res.redirect("/admin/categorias")
         })
 
     }).catch((erro)=>{
