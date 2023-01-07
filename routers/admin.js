@@ -12,7 +12,7 @@ router.get('/posts', (req, res)=>{
 })
 
 router.get('/categorias',(req, res)=>{
-    Categoria.find().then((categorias)=>{
+    Categoria.find().sort({date: "DESC"}).then((categorias)=>{
         res.render("admin/categorias", {categorias: categorias})
 
     }).catch((error)=>{
