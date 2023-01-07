@@ -59,7 +59,10 @@ router.post("/categorias/nova",(req, res) => {
 })
 
 router.get("/categorias/edit/:id", (req, res)=> {
-    res.render('admin/editCategorias.handlebars')
+    Categoria.findOne({_id: req.body.id}).then((categoria)=>{
+        res.render('admin/editCategorias.handlebars',{categoria: categoria})
+
+    })
 })
 
  module.exports = router
