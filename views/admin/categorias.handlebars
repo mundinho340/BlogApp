@@ -11,13 +11,15 @@
             <small>data de criação: {{date}}</small>
             <br>
             <a href="/admin/categorias/edit/{{_id}}"><button class="btn btn-success mt-4">editar Categoria</button></a>
+
             <form action="/admin/categorias/deletar" method="post">
-                 <input type="hidden" name="id" value={{_id}}>
-                 <button class="btn btn-danger mt-2">Deletar categoria</button>
+                 <input type="hidden" name="id" value="{{_id}}">
+                 <button type="submit" class="btn btn-danger mt-2">Deletar categoria</button>
           </form>
         </div>
         
     </div>
     
 {{else}}
+    <h2>Nenhuma categoria registrada</h2>
 {{/each}}
