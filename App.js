@@ -50,7 +50,7 @@ var handle = exphbs.create({
     
     app.engine('handlesbar', handlebars.engine)
     app.set('view egine', handlebars)
-    app.engine('handlebars', handlebars({
+    app.engine('handlebars', handlebars.engine({
         defaultLayout: 'main',
         runtimeOptions: {
             allowProtoPropertiesByDefault: true,
