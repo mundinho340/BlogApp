@@ -98,7 +98,7 @@ router.get("/postagens", (req, res)=>{
      res.render("admin/postagens")
 })
 
-router.get("postagens/add", (req, res)=>{
+router.get("/postagens/add", (req, res)=>{
     res.render("admin/addpostagens")
 })
  module.exports = router
