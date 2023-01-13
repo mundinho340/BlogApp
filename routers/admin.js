@@ -99,6 +99,13 @@ router.get("/postagens", (req, res)=>{
 })
 
 router.get("/postagens/add", (req, res)=>{
-    res.render("admin/addpostagens")
+    Categoria.find().lean().then((categorias)=> {
+        res.render("admin/addpostagens")
+
+    }).catch((error)=> {
+        req.flash("error_msg", "Houve um erro ao carregar o formulario")
+        res.redirect("/admin")
+    })
+    
 })
  module.exports = router
