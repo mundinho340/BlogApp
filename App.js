@@ -77,6 +77,8 @@ var handle = exphbs.create({
 //Rotas
     app.use('/admin', admin)
 
+    app.use(express.static)
+
 //Outros
 
 const port = 8080
